@@ -1,0 +1,16 @@
+package com.Recursion;
+
+public class FindNthFib {
+    public static void main(String[] args) {
+        int ans = finFib(3);
+        System.out.println(ans);
+    }
+    static int finFib(int n){
+        if(n < 2){
+            //base condition
+            return n;
+        }
+
+        return finFib(n-1) + finFib(n-2);
+    }
+}
