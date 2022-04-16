@@ -1,0 +1,17 @@
+package com.Recursion.trinadh.concept;
+
+
+//16-04-2022 Saturday trinadh logic
+public class ReverseNumber {
+    public static void main(String[] args) {
+        int n = 12345;
+        int ans = reverse(n);
+        System.out.println(ans);
+    }
+    static int reverse(int n){
+        if(n%10 == n){
+            return n;
+        }
+        return (((n%10) * 10) + reverse(n/10));
+    }
+}
