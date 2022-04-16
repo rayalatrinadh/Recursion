@@ -1,0 +1,14 @@
+package com.Recursion;
+
+public class SumOfNnumbers {
+    public static void main(String[] args) {
+        int ans = sumOfRec(5);
+        System.out.println(ans);
+    }
+    static int sumOfRec(int n){
+        if(n == 1){
+            return n;
+        }
+        return n + sumOfRec(n-1);
+    }
+}
