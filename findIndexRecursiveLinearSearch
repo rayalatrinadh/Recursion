@@ -1,0 +1,28 @@
+package com.Recursion.trinadh.Arrays;
+
+
+//linear Search effective logic
+public class LinearSearchEffi {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5};
+        int target = 599;
+        System.out.println(findIndex(arr,target,0));
+    }
+//    static boolean linear(int[] arr,int target,int index){
+//        if(index == arr.length){
+//            return false;
+//        }
+//
+//        return arr[index] == target || linear(arr,target,index+1);
+//    }
+
+    static int findIndex(int[] arr,int target,int index){
+        if(index == arr.length){
+            return -1;
+        }
+        if(arr[index] == target){
+            return index;
+        }
+        return findIndex(arr,target,index+1);
+    }
+}
