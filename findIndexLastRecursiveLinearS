@@ -1,0 +1,42 @@
+//print index from start to end of array iterating
+//print index from end to start of array iterating
+
+package com.Recursion.trinadh.Arrays;
+
+
+//linear Search effective logic
+public class LinearSearchEffi {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,4,5};
+        int target = 4;
+        System.out.println(findIndex(arr,target,0));
+        System.out.println(findIndexLast(arr,target,arr.length-1));
+    }
+//    static boolean linear(int[] arr,int target,int index){
+//        if(index == arr.length){
+//            return false;
+//        }
+//
+//        return arr[index] == target || linear(arr,target,index+1);
+//    }
+
+    static int findIndex(int[] arr,int target,int index){
+        if(index == arr.length){
+            return -1;
+        }
+        if(arr[index] == target){
+            return index;
+        }
+        return findIndex(arr,target,index+1);
+    }
+
+    static int findIndexLast(int[] arr,int target,int index){
+        if(index == -1){
+            return -1;
+        }
+        if(arr[index] == target){
+            return index;
+        }
+        return findIndexLast(arr,target,index-1);
+    }
+}
