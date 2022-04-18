@@ -1,0 +1,26 @@
+package com.Recursion.trinadh.concept;
+
+public class PalindromeNum {
+    public static void main(String[] args) {
+        int num = 12321;
+
+        int revNum = rev(num);
+
+        boolean ans = num == revNum ? true:false;
+        System.out.println("is given Number a palindrome ? "+ ans);
+
+    }
+    static int rev(int num){
+        int digits = (int)Math.log10(num) + 1;
+        return helper(num,digits);
+    }
+    static int helper(int num, int digits){
+
+        //base Condition
+        if(num% 10 == num){
+            return num;
+        }
+
+        return (num%10) *(int)(Math.pow(10,digits-1)) + helper(num/10,digits-1);
+    }
+}
