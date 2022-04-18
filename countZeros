@@ -1,3 +1,5 @@
+package com.Recursion.trinadh.concept;
+
 //Author Note : count argument inside recursive function
 //18-04-2022
 public class CountZerosDiffLogic {
