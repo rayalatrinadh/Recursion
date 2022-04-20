@@ -1,0 +1,31 @@
+package com.Recursion;
+
+
+import java.util.ArrayList;
+
+//important concept/pattern in recursion to know the flow of recursive calls
+public class FindAllIndexes {
+    public static void main(String[] args) {
+        int[] arr = {9,8,3,4,4,7,5,4,1,97,7};
+        System.out.println(findAllIndexes(arr,7,0));
+    }
+
+    static ArrayList<Integer> findAllIndexes(int[] arr, int target,int index){
+        //create temp list for every recursive call
+        //Note this temp list will be used as returnable list at last recursive call
+        //means : from last recurse call onwards the temp list wont be temp
+
+        ArrayList<Integer> list = new ArrayList<>();
+        if(index == arr.length){
+            return list;
+        }
+
+        if(arr[index] == target){
+            list.add(index);
+        }
+        ArrayList<Integer> belowAllCallValues = findAllIndexes(arr,target,index+1);
+        list.addAll(belowAllCallValues);
+        return list;
+    }
+
+}
