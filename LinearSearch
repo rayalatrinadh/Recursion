@@ -1,0 +1,20 @@
+package com.Recursion.trinadh.Arrays;
+
+
+//linear search by recursion logic by trinadh
+public class LinearSearch {
+    public static void main(String[] args) {
+        int[] arr = {3,2,1,18,9};
+        int target = 189;
+        System.out.println(linear(arr,0,target));
+    }
+    static int linear(int[] arr,int index,int target){
+        if(index == arr.length-1 && arr[index]!= target){
+            return -1;
+        }
+        if(arr[index] == target){
+            return index;
+        }
+        return linear(arr,index+1,target);
+    }
+}

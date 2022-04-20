@@ -1,0 +1,22 @@
+package com.Recursion.trinadh.Arrays;
+
+public class SortedArrayRecursive {
+    public static void main(String[] args) {
+        int[] arr = {1,2,4,8,9,1,88};
+        boolean ans = sortedRecursoin(arr,0,arr.length);
+        if(ans){
+            System.out.println("sorted");
+        }else{
+            System.out.println("Not Sorted");
+        }
+    }
+    static boolean sortedRecursoin(int[] arr,int start,int end){
+        if(start == end -1){
+            return true;
+        }
+        if(arr[start] < arr[start+1]){
+            return sortedRecursoin(arr,start+1,end);
+        }
+        return false;
+    }
+}
