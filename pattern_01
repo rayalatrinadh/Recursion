@@ -1,0 +1,29 @@
+//own logic by trinadh after long brainStorm
+
+package com.Recursion.trinadh.Patterns;
+
+public class Pattern_01Recursive {
+    public static void main(String[] args) {
+        pattern(5,1,1);
+    }
+    static void pattern(int n,int i, int j){
+
+        if(n == 0){  //base condition to exit the new calls
+            return;
+        }
+
+        if(j == n+1){//this condition is used to print rows(i) when j == n+1
+            //j reset to original value from where it's iteration starts
+            //and decrement n by 1 and increment i(row) by 1;
+            System.out.println();
+            pattern(n-1,i+1,1) ;
+            return;
+        }
+
+        System.out.print("* ");//this condition is used to print columns(j) only j increment
+        pattern(n,i,j+1);
+        return;
+
+
+    }
+}
