@@ -1,0 +1,23 @@
+package com.Recursion.trinadh.Patterns;
+
+
+//kunal logic but wrote by own after saw the video
+public class Pattern_01Effi {
+    public static void main(String[] args) {
+        pattern(5,1);
+    }
+
+    static void pattern(int r, int c){
+        if( r == 0){
+            return;
+        }
+
+        if(c <= r){
+            System.out.print("* ");
+            pattern(r,c+1);
+        }else{
+            System.out.println();
+            pattern(r-1,1);
+        }
+    }
+}
