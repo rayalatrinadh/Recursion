@@ -1,0 +1,30 @@
+package com.Recursion.trinadh.Sorting;
+
+import java.util.Arrays;
+
+public class SelectionSort {
+    public static void main(String[] args) {
+        int[] arr = {4,3,2,1,9,4,5,6,7,2,3,-1,2,1,2,-2};
+        selectionSort(arr,arr.length,0,0,0);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void selectionSort(int[] arr, int row,int col,int max,int col2){
+        if(row == 0){
+            return;
+        }
+
+        if(col< row){
+            if(arr[col] > max){
+                max = arr[col];
+                col2 = col;
+            }
+            selectionSort(arr,row,col+1,max,col2);
+        }else{
+            int temp = arr[row-1];
+            arr[row-1] = max;
+            //which column value we need to swap..???
+            arr[col2] = temp;
+            selectionSort(arr,row-1,0,0,0);
+        }
+    }
+}
