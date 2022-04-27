@@ -1,0 +1,20 @@
+package com.Recursion.trinadh.Patterns;
+
+public class Pattern_02Recursive {
+    public static void main(String[] args) {
+        pattern2(5,1,1);
+    }
+    static void pattern2(int r, int c, int k){
+        if(r == 0){
+            return;
+        }
+
+        if(c <= k){
+            System.out.print("* ");
+            pattern2(r,c+1,k);
+        }else{
+            System.out.println();
+            pattern2(r-1,1,k+1);
+        }
+    }
+}
