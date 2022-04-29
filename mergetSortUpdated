@@ -1,0 +1,56 @@
+package com.Recursion.trinadh.Sorting;
+
+import java.sql.Array;
+import java.util.*;
+
+
+public class MergeSort {
+    public static void main(String[] args) {
+        int[] arr = {8,4,3,12,5,6};
+       int[] ans = mergeSort(arr);
+
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(ans));
+    }
+    static int[] mergeSort(int[] arr){
+        if(arr.length == 1){
+            return arr;
+        }
+
+        int mid = arr.length/2;
+
+        int[] left = mergeSort(Arrays.copyOfRange(arr,0,mid));//here passing copy of the array
+        int[] right = mergeSort(Arrays.copyOfRange(arr,mid,arr.length));
+        return merg(left,right);
+    }
+    static int[] merg(int[] first,int[] second){
+        int[] mix = new int[first.length + second.length];
+
+        int i = 0;//pointer for first array
+        int j = 0;//pointer for second array
+        int k = 0;//pointer for new mix array
+
+        while(i < first.length && j < second.length){
+            if(first[i] < second[j]){
+                mix[k] = first[i];
+                i++;
+            }else{
+                mix[k] = second[j];
+                j++;
+            }
+            k++;
+        }
+
+        while(i < first.length){
+            mix[k] = first[i];
+            i++;
+            k++;
+        }
+        while(j < second.length){
+            mix[k] =  second[j];
+            j++;
+            k++;
+        }
+         return mix;
+    }
+}
