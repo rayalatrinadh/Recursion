@@ -1,0 +1,49 @@
+package com.Recursion.Strings;
+
+public class Stream {
+    public static void main(String[] args) {
+        skip(" ","bbaacadhabhc"); //TYPE 1 : with empty variable
+
+        System.out.println(skip("bbaacadhabhc"));//TYPE 2 : withOut empty variable
+    }
+
+    //base condition
+
+    /**
+     *
+     * @param p : processed String;
+     * @param up : unProcessed String;
+     */
+
+    //############################# TYPE 1 : with empty variable #################################
+    static void skip(String p,String up){
+        if(up.isEmpty()){
+            System.out.println(p.trim());
+            return;
+        }
+
+        char ch = up.charAt(0);
+
+        if(ch == 'a'){
+            skip(p,up.substring(1));
+        }else{
+            skip(p + ch,up.substring(1));
+        }
+    }
+
+
+    //############################# TYPE 2 : withOut empty variable #################################
+    static String skip(String up){
+        if(up.isEmpty()){
+            return " ";
+        }
+
+        char ch = up.charAt(0);
+
+        if(ch == 'a'){
+            return skip(up.substring(1));
+        }else{
+           return  ch + skip(up.substring(1));
+        }
+    }
+}
