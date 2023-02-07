@@ -1,0 +1,15 @@
+package com.Recursion;
+
+public class PrintNum {
+    public static void main(String[] args) {
+        printNum(5);
+    }
+    static void printNum(int n){
+        if(n < 1){
+            return;
+        }
+
+        System.out.print(n--+ " ");
+        printNum(n);//tailFunction
+    }
+}
