@@ -1,0 +1,26 @@
+package com.Recursion;
+
+import java.util.LinkedHashMap;
+
+public class FactorialNumProperWay {
+    public static final LinkedHashMap<Integer, Integer> lhm = new LinkedHashMap<Integer, Integer>();
+    public static void main(String[] args) {
+        int n = 15;
+        int ans = factorialNum(n);
+        if(!lhm.containsKey(n)){
+            lhm.put(5,ans);
+        }
+        System.out.println(ans);
+    }
+    static int factorialNum(int n){
+  
+        if(n == 1){
+            return n;
+        }
+
+        if(lhm.containsKey(n)){
+            return lhm.get(n);
+        }
+        return n * factorialNum(n-1);
+    }
+}
