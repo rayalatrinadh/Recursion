@@ -1,0 +1,19 @@
+package com.Recursion;
+
+public class FactorialNum {
+    public static void main(String[] args) {
+        int ans = factorialNum(6,1);
+        System.out.println(ans);
+    }
+    static int factorialNum(int n,int ans){
+
+        if(n <= 1)
+        {
+            return ans;
+        }
+
+        ans *= n;
+        return factorialNum(n-1,ans);
+
+    }
+}
